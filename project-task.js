@@ -38,9 +38,9 @@ const todos = [
   2. Use an anonymous function as the callback.
   3. Return only the tasks that are not completed.
   */
-  
+  //Loops through todos array, keeps only tasks where comppleted is false, returns a new array with only incompleted tasks. 
   let findIncomplete = todos.filter(function(todo) {
-    return !todo.completed;
+    return !todo.completed; //Return true if task is not ccompleted
   });
   
   /*
@@ -51,8 +51,9 @@ const todos = [
   2. Use an anonymous function as the comparison function.
   3. Sort tasks in ascending order of priority (1 = highest).
   */
+ //creates a copy of the todos array, sorts the tasks in ascending order based on prio.
   let sortedPriority = [...todos].sort(function(top, bottom){
-    return top.priority - bottom.priority;
+    return top.priority - bottom.priority; //compare the priorty values 1 being the highest
   });
   
   /*
@@ -63,8 +64,9 @@ const todos = [
   2. Use an anonymous function to modify each object.
   3. Change the `completed` property to `true` for every task.
   */
+ //Creates new array of task, copies all properties and sets completed tor true.
   let updateTaskCompleted = todos.map(function(completedTodo) {
-    return {...completedTodo, completed: true};
+    return {...completedTodo, completed: true}; //Copy all exisiting properties and change completed to true
   })
   
   /*
@@ -75,13 +77,13 @@ const todos = [
   2. Then, sort the filtered results by priority using `sort()`.
   3. Use method chaining to perform both steps together.
   */
-  
+  // Filters the list to keep only incomplete Tasks, sorts thiuus filtered list by prio in ascending order. 
   let combineFilter = todos
   .filter(function(combineFilter) {
-    return !combineFilter.completed;
+    return !combineFilter.completed; // Only include incomplete tasks
   })
   .sort(function(upper, lower){
-    return upper.priority - lower.priority
+    return upper.priority - lower.priority //sort by ascending prio 1 being the highest. 
   })
   
   // ============================================
